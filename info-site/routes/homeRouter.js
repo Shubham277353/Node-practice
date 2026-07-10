@@ -1,9 +1,11 @@
-const {Router} = require("express");
+const { Router } = require("express");
+const path = require("path");
 
 const homeRouter = Router();
 
-authorRouter.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname,"index.html"));
-})
+homeRouter.get("/", (req, res) => {
+  const filePath = path.join(__dirname, "..", "index.html");
+  res.sendFile(filePath);
+});
 
-module.exports = authorRouter;
+module.exports = homeRouter;
